@@ -1298,6 +1298,14 @@ func (l *treeNodeListener) EnterOnelinecond(ctx *gen.OnelinecondContext) {
 	l.node = root
 }
 
+func (l *exprListener) EnterGloadExpr(ctx *gen.GloadExprContext) {
+	listener := newExprListener(l.ctx, l.parent)
+	ctx.EnterRule(listener)
+	l.expr = listener.getExpr()
+}
+
+
+
 func newParser(source string, collector *errorCollector) *gen.TealangParser {
 	is := antlr.NewInputStream(source)
 	lexer := gen.NewTealangLexer(is)

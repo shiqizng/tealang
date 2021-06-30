@@ -132,6 +132,9 @@ ACCOUNTS    : 'accounts';
 APPS        : 'apps';
 ASSETS      : 'assets';
 EXTRAPROGRAMPAGES    : 'ExtraProgramPages';
+GLOAD       : 'gload';
+GLOADS      : 'gloads';
+
 
 
 MINTXNFEE       : 'MinTxnFee' ;

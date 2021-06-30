@@ -37,10 +37,15 @@ function logic() {
 	let t = txn.Note
 	let g = gtxn[0].Sender
 	let r = args[0]
+	let e = txn.ExtraProgramPages
 	r = t
 	t = s
 
 	let z = sha256("test")
+	
+	let p = gload(1,2)
+	let p = gloads(2)
+
 
 	let f = test(20+2, 30)
 	if f + 2 < 10 {
@@ -52,6 +57,7 @@ function logic() {
 		if y==10 {break;}
 		y=y+1
 	}
+	
 	return 1
 }
 `
@@ -547,6 +553,8 @@ function logic() {
 	a.Equal(2, len(parserErrors), parserErrors)
 	a.Contains(parserErrors[0].msg, `no viable alternative at input 'const sha512_256'`)
 	a.Contains(parserErrors[1].msg, `no viable alternative at input 'let args'`)
+
+
 }
 
 func TestBuiltinFuncArgsNumber(t *testing.T) {
