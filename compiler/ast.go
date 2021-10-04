@@ -68,6 +68,8 @@ func newLiteralInfo() (literals *literalInfo) {
 	return
 }
 
+var gaddress uint = 100
+
 func newContext(parent *context) (ctx *context) {
 	ctx = new(context)
 	ctx.parent = parent
@@ -78,8 +80,9 @@ func newContext(parent *context) (ctx *context) {
 		ctx.addressNext = parent.addressNext
 	} else {
 		ctx.literals = newLiteralInfo()
-		ctx.addressEntry = 0
-		ctx.addressNext = 0
+		gaddress += 1
+		ctx.addressEntry = gaddress // 0
+		ctx.addressNext = gaddress // 0
 
 		// global context, add internal literals
 		ctx.addLiteral(falseConstValue, intType)
@@ -196,6 +199,8 @@ func (n exprType) String() string {
 }
 
 var builtinFun = map[string]bool{
+    "toint":			 true,
+    "tobyte":			 true,
 	"sha256":            true,
 	"keccak256":         true,
 	"sha512_256":        true,
@@ -214,6 +219,7 @@ var builtinFun = map[string]bool{
 	"balance":           true,
 	"min_balance":       true,
 	"app_opted_in":      true,
+	"log":							 true,
 	"app_local_get":     true,
 	"app_local_get_ex":  true,
 	"app_global_get":    true,
