@@ -22,6 +22,7 @@ statement
     |   termination
     |   assignment
     |   builtinVarStatement
+    |   innertxn
     |   NEWLINE|SEMICOLON
     ;
 
@@ -52,6 +53,12 @@ condTrueBlock
 
 condFalseBlock
     : block                                         # IfStatementFalse
+    ;
+
+innertxn
+    :   INNERTXN DOT ITXNBEGIN LEFTPARA RIGHTPARA    # InnerTxnBegin
+    |   INNERTXN DOT ITXNEND LEFTPARA RIGHTPARA      # InnerTxnEnd
+    |   INNERTXN DOT TXNFIELD EQ expr                # InnerTxnAssign
     ;
 
 termination
@@ -124,6 +131,7 @@ builtinVarExpr
     |   accounts                                    # AccountsExpr
     |   apps                                        # AppsExpr
     |   gaid                                        # GaidExpr
+    |   INNERTXN DOT ITXNFIELD                      # InnerTxnFieldExpr
     ;
 
 txn
