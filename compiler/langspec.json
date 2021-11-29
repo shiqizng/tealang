@@ -12,30 +12,7 @@
         "Flow Control"
       ]
     },
-    {
-      "Opcode": 176,
-      "Name": "toint",
-      "Args": "B",
-      "Returns": "U",
-      "Cost": 1,
-      "Size": 1,
-      "Doc": "Convert unknown to uint",
-      "Groups": [
-        "Arithmetic"
-      ]
-    },    
-    {
-      "Opcode": 177,
-      "Name": "tobyte",
-      "Args": "B",
-      "Returns": "B",
-      "Cost": 1,
-      "Size": 1,
-      "Doc": "Convert unknown to byte",
-      "Groups": [
-        "Arithmetic"
-      ]
-    },    
+    
     {
       "Opcode": 1,
       "Name": "sha256",
@@ -658,9 +635,10 @@
         "Round",
         "LatestTimestamp",
         "CurrentApplicationID",
-        "CreatorAddress"
+        "CreatorAddress",
+        "CurrentApplicationAddress"
       ],
-      "ArgEnumTypes": "UUUBUUUUUB",
+      "ArgEnumTypes": "UUUBUUUUUBB",
       "Doc": "push value from globals to stack",
       "ImmediateNote": "{uint8 global field index}",
       "Groups": [
@@ -1676,6 +1654,30 @@
       "Groups": [
         "State Access"
       ]
-    }    
+    },
+    {
+      "Opcode": 177,
+      "Name": "toint",
+      "Args": "B",
+      "Returns": "U",
+      "Cost": 1,
+      "Size": 1,
+      "Doc": "Convert unknown to uint",
+      "Groups": [
+        "Arithmetic"
+      ]
+    },    
+    {
+      "Opcode": 178,
+      "Name": "tobyte",
+      "Args": "B",
+      "Returns": "B",
+      "Cost": 1,
+      "Size": 1,
+      "Doc": "Convert unknown to byte",
+      "Groups": [
+        "Arithmetic"
+      ]
+    }        
   ]
 }

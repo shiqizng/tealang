@@ -119,7 +119,7 @@ Checkout [syntax highlighter](https://github.com/pzbitskiy/tealang-syntax-highli
    popd
    ```
 
-5. Link the pkg directory to the src that you just created.
+5. Link the `go-algorand` pkg directory to the src directory.
    ```sh
    make algorand-link
    ```
