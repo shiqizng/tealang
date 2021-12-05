@@ -90,6 +90,8 @@ ASSETPARAMSFIELDS
 
 BUILTINFUNC
     :   SHA256
+    |   TOINT
+    |	  TOBYTE
     |   KECCAK256
     |   SHA512
     |   ED25519
@@ -139,7 +141,6 @@ ACCOUNTS    : 'accounts' ;
 APPS        : 'apps' ;
 ASSETS      : 'assets' ;
 GAID        : 'gaid';
-
 
 
 
@@ -212,7 +213,6 @@ NUMLOCALBYTESLICES   : 'LocalNumByteSlice' ;
 EXTRAPROGRAMPAGES    : 'ExtraProgramPages';
 
 
-
 ASSETTOTAL         : 'AssetTotal' ;
 ASSETDECIMALS      : 'AssetDecimals' ;
 ASSETDEFAULTFROZEN : 'AssetDefaultFrozen' ;
@@ -225,6 +225,8 @@ ASSETRESERVE       : 'AssetReserve' ;
 ASSETFREEZE        : 'AssetFreeze' ;
 ASSETCLAWBACK      : 'AssetClawback' ;
 
+TOINT		: 'toint'  ;
+TOBYTE		: 'tobyte' ;
 SHA256      : 'sha256' ;
 KECCAK256   : 'keccak256' ;
 SHA512      : 'sha512_256' ;
@@ -235,6 +237,7 @@ BTOI        : 'btoi' ;
 SUBSTRING   : 'substring' ;
 CONCAT      : 'concat' ;
 ASSERT      : 'assert' ;
+LOG         : 'log' ;
 GETBIT      : 'getbit' ;
 GETBYTE     : 'getbyte' ;
 SETBIT      : 'setbit' ;
